@@ -22,7 +22,7 @@
 
          <li class="menu-label">Program & Feature</li>
          <li>
-             <a href="{{ url('dashboard') }}">
+             <a href="{{ url('maps') }}">
                  <div class="parent-icon"><i class='bx bx-map'></i>
                  </div>
                  <div class="menu-title">Maps</div>

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',function(){
-    return redirect()->route('dashboard');
+    return view('clauster.index',['title'=>'Maps']);
 });
 
 Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
@@ -28,7 +28,4 @@ Route::get('add-location',[PlaceController::class,'create']);
 Route::get('form',function(){
     return view('form');
 });
-Route::get('maps',function(){
-    $data['title'] = 'Maps';
-    return view('maps.index',$data);
-});
+Route::get('maps',[DashboardController::class,'maps']);

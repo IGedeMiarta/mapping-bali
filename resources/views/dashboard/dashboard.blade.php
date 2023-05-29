@@ -1,17 +1,75 @@
 @extends('layouts.app')
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur numquam quo culpa, libero cupiditate cumque
-            maxime quasi et placeat fugit ab velit rem? Quis eos cupiditate corrupti quisquam, omnis voluptatibus laudantium
-            consequatur cumque, quidem dicta distinctio soluta non harum est tempore! Voluptatibus praesentium
-            necessitatibus nihil ipsa error distinctio sapiente laudantium. Vel tenetur possimus inventore cum ipsam natus
-            ad quaerat sit perferendis voluptatibus expedita nobis numquam quo ratione quibusdam, eos cupiditate ex debitis
-            impedit alias dolor non dicta error deserunt! Qui ratione distinctio cupiditate cum, perspiciatis placeat sed
-            accusamus, iusto architecto atque quisquam officia exercitationem laboriosam dolorem id quis temporibus
-            doloremque?
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-3 border-info">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total Location</p>
+                            <h4 class="my-1 text-info">4805</h4>
+                            <p class="mb-0 font-13">Location on maps</p>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i
+                                class='bx bx-directions'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-3 border-danger">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total Kategori</p>
+                            <h4 class="my-1 text-danger">84245</h4>
+                            <p class="mb-0 font-13">+5.4% from last week</p>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto"><i
+                                class='bx bxs-wallet'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-3 border-success">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total Visitor</p>
+                            <h4 class="my-1 text-success">34.6%</h4>
+                            <p class="mb-0 font-13">-4.5% from last week</p>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i
+                                class='bx bxs-bar-chart-alt-2'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-3 border-warning">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Total Users</p>
+                            <h4 class="my-1 text-warning">8.4K</h4>
+                            <p class="mb-0 font-13">+8.4% from last week</p>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-blooker text-white ms-auto"><i
+                                class='bx bxs-group'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!--end row-->
+
+    <!--end row-->
+
     <!--end row-->
     {{-- <div class="row">
         <div class="col-12 col-lg-8">

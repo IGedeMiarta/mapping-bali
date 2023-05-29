@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlaceController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,10 @@ Route::resource('location',PlaceController::class);
 Route::get('add-location',[PlaceController::class,'create']);
 
 Route::get('form',function(){
-    return view('form');
+    $data['kategori'] = Category::all();
+    return view('form',$data);
 });
 Route::get('maps',[DashboardController::class,'maps']);
+Route::get('success',function(){
+    return view('success');
+});

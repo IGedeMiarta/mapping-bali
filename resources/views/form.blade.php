@@ -27,7 +27,8 @@
 
 <body>
     <div class="main-block">
-        <form action="/">
+        <form action="{{ url('location') }}" method="POST">
+            @csrf
             <h1>Tambahkan Tempat Baru</h1>
             <fieldset>
                 <legend>
@@ -39,13 +40,21 @@
                     </div>
                     <div>
                         <label>Alamat Lengkap*</label>
-                        <input type="text" name="alamat" required>
+                        <input type="text" name="place_address" required>
                     </div>
                     <div>
-                        <label>Nama Pengelola*</label><input type="password" name="cp" required>
+                        <label>Nama Pengelola*</label><input type="text" name="contact_person" required>
                     </div>
                     <div>
-                        <label>Nomor Telp*</label><input type="text" name="phone" required>
+                        <label>Nomor Telp*</label><input type="text" name="nomor_hp" required>
+                    </div>
+                    <div>
+                        <label>Kategori*</label>
+                        <select name="category_id" id="">
+                            @foreach ($kategori as $item)
+                                <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div>
                         <label>Latitude*</label><input type="text" name="lat" required readonly id="latitude">
@@ -62,14 +71,15 @@
                 </legend>
                 <div class="personal-details">
                     <div>
-                        <div><label>Email</label><input type="text" name="name" required></div>
-                        <div><label>Web</label><input type="text" name="name" required></div>
+                        <div><label>Email</label><input type="text" name="email"></div>
+                        <div><label>Web</label><input type="text" name="web"></div>
                     </div>
                     <div>
-                        <div><label>Instagram</label><input type="text" name="name"></div>
-                        <div><label>YouTube</label><input type="text" name="name" required></div>
+                        <div><label>Instagram</label><input type="text" name="insta"></div>
+                        <div><label>YouTube</label><input type="text" name="youtube"></div>
                     </div>
                 </div>
+                <input type="hidden" name="type" value="form">
             </fieldset>
             <fieldset>
                 <legend>

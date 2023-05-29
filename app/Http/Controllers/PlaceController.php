@@ -51,6 +51,9 @@ class PlaceController extends Controller
                 'youtube'       => $request->youtube??'-',
             ]);
             DB::commit();
+            if(isset($request->type)){
+                return redirect('success');
+            }   
             return redirect()->back()->with('success','Tempat baru ditambahkan');
         } catch (\Throwable $th) {
             DB::rollBack();

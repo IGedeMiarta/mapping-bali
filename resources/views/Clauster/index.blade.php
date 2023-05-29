@@ -41,8 +41,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent1">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"> <a class="nav-link active" aria-current="page"
-                                href="{{ url('dashboard') }}"><i class='bx bx-home-alt me-1'></i>Login</a>
+                        <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#"><i
+                                    class='bx bx-home-alt me-1'></i>Home</a>
                         </li>
                     </ul>
                 </div>
@@ -60,6 +60,8 @@
     </div>
 
     <!-- end wrapper -->
+    <script src="{{ asset('thame') }}/assets/js/jquery.min.js"></script>
+
     <script>
         const map = L.map('map').setView([-8.449936376881986, 115.07676747906628], 10);
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

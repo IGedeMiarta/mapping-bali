@@ -88,7 +88,7 @@
                       </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
-                      <form action="{{ url('logout') }}" method="POST">
+                      <form action="{{ url('/') }}" method="GET">
                           @csrf
 
                           <li>

@@ -35,7 +35,7 @@ class CategoryController extends Controller
         try {
             Category::create($request->all());
             DB::commit();
-            return redirect()->back()->with('success','success');
+            return redirect()->back()->with('success','Data Berhasil Disimpan');
         } catch (\Throwable $th) {
             DB::rollBack();
             return redirect()->back()->with('error','Error : '.$th->getMessage());

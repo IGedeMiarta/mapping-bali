@@ -19,7 +19,15 @@
              </a>
          </li>
 
+
          <li class="menu-label">Program & Feature</li>
+         <li>
+             <a href="{{ url('dashboard') }}">
+                 <div class="parent-icon"><i class='bx bx-map'></i>
+                 </div>
+                 <div class="menu-title">Maps</div>
+             </a>
+         </li>
          <li>
              <a href="javascript:;" class="has-arrow">
                  <div class="parent-icon"><i class='bx bx-book-bookmark'></i>

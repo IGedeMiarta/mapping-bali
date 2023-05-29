@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="{{ asset('css') }}/dropify.min.css">
     <title>{{ $title ?? ':)' }} - {{ env('APP_NAME') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    <link rel="stylesheet" href="{{ asset('leaflet') }}/leaflet.css" />
+    <script src="{{ asset('leaflet') }}/leaflet.js"></script>
 </head>
 
 <body>

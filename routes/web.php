@@ -24,3 +24,11 @@ Route::resource('category',CategoryController::class);
 
 Route::resource('location',PlaceController::class);
 Route::get('add-location',[PlaceController::class,'create']);
+
+Route::get('form',function(){
+    return view('form');
+});
+Route::get('maps',function(){
+    $data['title'] = 'Maps';
+    return view('maps.index',$data);
+});

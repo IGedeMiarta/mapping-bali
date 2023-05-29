@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -12,7 +13,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Kategori';
+        $data['table'] = Category::all();
+        return view('master.category',$data);
     }
 
     /**
@@ -28,7 +31,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try {
+            Category::create($request->all());
+            DB::commit();
+            return redirect()->back()->with('success','success');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->back()->with('error','Error : '.$th->getMessage());
+        }
     }
 
     /**
@@ -52,7 +63,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->update($request->all());
+        return redirect()->back()->with('success','Data Diupdate');
     }
 
     /**

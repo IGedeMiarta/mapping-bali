@@ -16,9 +16,14 @@ return new class extends Migration
             $table->bigInteger('category_id');
             $table->string('place_name');
             $table->string('place_address');
-            $table->string('code',10);
             $table->string('lat');
             $table->string('lng');
+            $table->string('cp')->default('-');
+            $table->string('phone')->default('-');
+            $table->string('email')->default('-');
+            $table->string('web')->default('-');
+            $table->string('instagram')->default('-');
+            $table->string('youtube')->default('-');
             $table->timestamps();
         });
     }

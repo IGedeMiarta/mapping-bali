@@ -1,9 +1,8 @@
-<footer class="footer">
-    <div class="footer-content">
-        <p class="m-b-0">Copyright © 2019 <a href="#">{{ env('APP_NAME') }}</a>. All rights reserved.</p>
-        <span>
-            <a href="#" class="text-gray m-r-15">Term &amp; Conditions</a>
-            <a href="#" class="text-gray">Privacy &amp; Policy</a>
-        </span>
-    </div>
+<footer class="page-footer">
+    <p class="mb-0">Copyright © 2023 <a href="#">{{ env('APP_NAME') }}</a>. All rights reserved.</p>
+
 </footer>
+
+{{-- <footer class="page-footer">
+    <p class="mb-0">Copyright © 2021. All right reserved.</p>
+</footer> --}}

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlaceController extends Controller
 {
@@ -12,7 +14,9 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Lokasi';
+        $data['table'] = Place::all();
+        return view('lokasi.index',$data);
     }
 
     /**
@@ -20,7 +24,10 @@ class PlaceController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Tambah Lokasi';
+        $data['table'] = Place::all();
+        $data['kategori'] = Category::all();
+        return view('lokasi.add',$data);
     }
 
     /**
@@ -28,7 +35,27 @@ class PlaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try {
+            Place::create([
+                'category_id'   => $request->category_id,
+                'place_name'    => $request->place_name,
+                'place_address' => $request->place_address,
+                'lat'           => $request->lat,
+                'lng'           => $request->lng,
+                'cp'            => $request->contact_person,
+                'phone'         => $request->nomor_hp,
+                'email'         => $request->email??'-',
+                'web'           => $request->web??'-',
+                'instagram'     => $request->insta??'-',
+                'youtube'       => $request->youtube??'-',
+            ]);
+            DB::commit();
+            return redirect()->back()->with('success','Tempat baru ditambahkan');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->back()->with('error','Error : '.$th->getMessage());
+        }
     }
 
     /**
